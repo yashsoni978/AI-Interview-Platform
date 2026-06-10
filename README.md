@@ -10,7 +10,7 @@ Built with Next.js, Prisma, PostgreSQL, Clerk Authentication, Gemini AI, Stream 
 
 ## Live Demo
 
-https://your-vercel-url.vercel.app/
+https://ai-interview-platform-pied.vercel.app/
 
 ---
 
@@ -32,7 +32,7 @@ Inspired by modern marketplaces such as Topmate, Interviewing.io, and Pramp.
 
 ### Explore Interviewers
 
-![Explore Interviewers](./public/explore.png)
+![Explore Interviewers](./public/exploreinterviews.png)
 
 ### Interview Session
 
@@ -40,11 +40,11 @@ Inspired by modern marketplaces such as Topmate, Interviewing.io, and Pramp.
 
 ### Interviewer Dashboard
 
-![Dashboard](./public/dashboard.png)
+![Dashboard](./public/interviewerdashboard.png)
 
 ### AI Feedback Report
 
-![Feedback Report](./public/feedback.png)
+![Feedback Report](./public/AIInterviewFeedback.png)
 
 ---
 
