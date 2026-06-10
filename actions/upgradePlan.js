@@ -23,8 +23,11 @@ export async function upgradePlan(plan) {
 
   // Only interviewees buy credits
   if (dbUser.role !== "INTERVIEWEE") {
-    throw new Error("Only interviewees can purchase credits");
-  }
+  return {
+    success: false,
+    message: "Only interviewees can purchase credits",
+  };
+}
 
   const PLAN_ORDER = {
     free: 0,
@@ -33,8 +36,11 @@ export async function upgradePlan(plan) {
   };
 
   if (PLAN_ORDER[plan] <= PLAN_ORDER[dbUser.currentPlan]) {
-    throw new Error("You can only upgrade to a higher plan");
-  }
+  return {
+    success: false,
+    message: "You can only upgrade to a higher plan",
+  };
+}
 
   const creditsToAdd = {
     starter: 5,
@@ -42,8 +48,11 @@ export async function upgradePlan(plan) {
   }[plan];
 
   if (!creditsToAdd) {
-    throw new Error("Invalid plan");
-  }
+  return {
+    success: false,
+    message: "Invalid plan",
+  };
+}
 
   await db.user.update({
     where: {
