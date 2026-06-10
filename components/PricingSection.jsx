@@ -16,10 +16,16 @@ export default function PricingSection() {
   const { data, loading, fn: upgradeFn } = useFetch(upgradePlan);
 
   useEffect(() => {
-    if (data?.success) {
-      router.refresh();
-    }
-  }, [data, router]);
+  if (!data) return;
+
+  if (data.success) {
+    alert("Credits added successfully!");
+    router.refresh();
+  } else {
+    alert(data.message);
+  }
+}, [data, router]);
+  
   const isSignedIn = !!userId;
   const isOnStarter = isSignedIn && has({ plan: "starter" });
   const isOnPro = isSignedIn && has({ plan: "pro" });
